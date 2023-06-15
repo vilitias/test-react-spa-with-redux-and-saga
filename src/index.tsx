@@ -8,13 +8,15 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Main from "./pages/main";
 import AboutMe from "./pages/about-me";
 import UserDetails from "./pages/user-details";
+import { store } from "./reduxToolkit/store";
+import { Provider } from "react-redux";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
-      { path: "main", element: <Main /> },
+      { path: "", element: <Main /> },
       { path: "about-me", element: <AboutMe /> },
       { path: "user-details", element: <UserDetails /> },
     ],
@@ -26,7 +28,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );
 
