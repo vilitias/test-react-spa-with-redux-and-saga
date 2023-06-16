@@ -8,7 +8,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Main from "./pages/main";
 import AboutMe from "./pages/about-me";
 import UserDetails from "./pages/user-details";
-import { store } from "./reduxToolkit/store";
+import { store } from "./store/store";
 import { Provider } from "react-redux";
 
 const router = createBrowserRouter([
