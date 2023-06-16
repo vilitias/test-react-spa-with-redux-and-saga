@@ -1,6 +1,10 @@
 import { createReducer } from "@reduxjs/toolkit/dist/createReducer";
 import { TEST_ACTION } from "./actions";
 
+interface TestReducerState {
+  posts: UserObject[];
+}
+
 export interface UserObject {
   userId: number;
   id: number;
@@ -8,16 +12,8 @@ export interface UserObject {
   body: string;
 }
 
-const initialState = {
-  posts: [
-    {
-      userId: 1,
-      id: 1,
-      title:
-        "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-      body: "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
-    },
-  ],
+const initialState: TestReducerState = {
+  posts: [],
 };
 
 const testReducer = (
