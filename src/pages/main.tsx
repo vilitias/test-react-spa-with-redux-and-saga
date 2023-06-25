@@ -1,9 +1,8 @@
 import { useDispatch } from "react-redux/es/exports";
-import { TEST_ACTION } from "../reduxToolkit/actions";
+import { TEST_ACTION } from "../store/actions";
 import { useSelector } from "react-redux";
-import { UserObject } from "../reduxToolkit/reducer";
-import { useEffect } from "react";
-import { RootState } from "../reduxToolkit/store";
+import { UserObject, addPost } from "../store/reducer";
+import { RootState } from "../store/store";
 
 const Main = () => {
   const dispatch = useDispatch();
@@ -15,7 +14,7 @@ const Main = () => {
       <div>
         <button
           onClick={() => {
-            dispatch({ type: TEST_ACTION });
+            dispatch(addPost());
             console.log(store);
           }}
         >
